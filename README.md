@@ -9,6 +9,8 @@
 
 Welcome to your Rails project on Cloud9 IDE!
 
+This is the examles of dynamic form (referenced by Ryan tutorials)
+
 To get started, just do the following:
 
 1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
