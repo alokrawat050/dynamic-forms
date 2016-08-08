@@ -1,0 +1,23 @@
+<% if !flash[:notice].blank? %>
+  <div id='flash'>
+    <%= render partial: 'layouts/flash_notice',locals: {notice: flash[:notice]} %>
+  </div>
+<% end %>
+<% if !flash[:alert].blank? %>
+  <div class="alert alert-warning fade in">
+    <span class="fa fa-bell-o"></span>
+    <a href="#" class="close" data-dismiss="alert">&times;</a>  
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+<% if flash[:notice].blank? and flash[:alert].blank? %>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <span class="fa fa-bell-o"></span>
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <%= value %>
+    </div>
+  <% end %>
+<% end %>
+
+  <%= yield %>

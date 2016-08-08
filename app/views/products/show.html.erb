@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= number_to_currency(@product.price, :locale => :ja) %>
+</p>
+
+<% @product.properties.each do |name, value| %>
+  <p>
+    <b><%= name.humanize %>:</b>
+    <%= value %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
